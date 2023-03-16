@@ -21,7 +21,8 @@ sleep 2
   
 # Start e2core & background it
 echo 'Starting e2core...'
-e2core start /modules.wasm.zip &
+#e2core mod start --http-port 8080 /py.wasm &
+SAT_HTTP_PORT=8000 e2core mod start /py.wasm &
 sleep 2
 
 # bring nginx back into the foreground and leave it there

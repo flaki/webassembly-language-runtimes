@@ -4,7 +4,73 @@
 <meta charset="utf-8">
 <title>Suborbital Who-is-What</title>
 <style>
+* { box-sizing: border-box }
+body {
+    padding: 0;
+    margin: 0;
 
+    font-family: 'comic sans ms', fantasy;
+    font-weight: bold;
+    color: white;
+
+    background-color: #ff6c5a;
+    min-height: 100vh;
+
+    background-image: url(/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+main {
+    text-align: center;
+    padding: 1rem;
+    padding-bottom: 6rem;
+
+    background: linear-gradient(to top, transparent, #ff6c5a 6rem);
+
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0;
+}
+h2 {
+    font-size: 2.4rem;
+    margin-top: 0;
+}
+
+input, button {
+    font-family: 'comic sans ms', fantasy;
+    font-weight: bold;
+    font-size: 1em;
+    color: #ff6c5a;
+    padding: 1rem;
+    border-radius: 1rem;
+    border-style: none;
+}
+
+input {
+    color: #6C5AFF;
+}
+input:focus-visible {
+    outline: .2rem inset;
+}
+button {
+    background: #6C5AFF;
+    color: white;
+    padding: .8rem;
+    border: .2rem solid #4E3DDD;
+}
+button:active, button:hover {
+    cursor: pointer;
+    border-color: #ffada3;
+}
+
+.result {
+    font-size: 2rem;
+    font-style: italic;
+    margin-top: 4rem;
+}
 </style>
 </head>
 <body>
@@ -13,6 +79,23 @@
         <h2>at Suborbital</h2>
         <input placeholder="Flaki" />
         <button>Let us see!</button>
+        <p class="result"></p>
     </main>
+
+<script>
+    function apiRequest(e) {
+        who = document.querySelector('input').value || 'Flaki';
+        fetch(`/api/`, { method: "POST", body: who }).then(r=>r.text()).then(what => {
+            result = `${who} is a(n) ${what}`
+            console.log(result)
+            document.querySelector('.result').innerText = result
+        })
+    }
+    document.querySelector('button').addEventListener('click', apiRequest)
+    if (window.location.hash) {
+        document.querySelector('input').value = window.location.hash.substr(1)
+        apiRequest()
+    }
+</script>
 </body>
 </html>

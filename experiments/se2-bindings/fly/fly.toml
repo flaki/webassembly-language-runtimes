@@ -1,4 +1,4 @@
-# fly.toml file generated for throbbing-butterfly-549 on 2023-03-16T16:28:56+02:00
+# fly.toml file generated for eattwopie on 2023-03-16T21:58:17+02:00
 
 app = "eattwopie"
 kill_signal = "SIGINT"
@@ -14,7 +14,7 @@ processes = []
 
 [[services]]
   http_checks = []
-  internal_port = 8000
+  internal_port = 8080
   processes = ["app"]
   protocol = "tcp"
   script_checks = []
