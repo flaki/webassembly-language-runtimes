@@ -4,6 +4,8 @@
 
 int pyhost_initialize(int argc)
 {
+    putenv("PYTHONPATH=/plugin");
+
     if (0 != init_sdk_module())
     {
         fprintf(stderr, "[pyhost.c]:Failed to register \"%s\" module for init.\n", SDK_MODULE);
