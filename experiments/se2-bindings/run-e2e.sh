@@ -44,6 +44,6 @@ echo -e "$(date --iso-8601=ns) | Running se2-mock-runtime..." | tee -a build.log
     set -x
     node --experimental-wasi-unstable-preview1 . \
         --wrapper ../wasm-wrapper-c/target/wasm32-wasi/wasm-wrapper-c.wasm \
-        --plugin-root ../py-plugin/ \
+        --plugin-root ../py-fetch/ \
         --python-usr-root ../wasm-wrapper-c/target/wasm32-wasi/deps/
 ) 

@@ -31,5 +31,14 @@ void env_return_result(u8 *result_pointer, i32 result_size, i32 ident)
 void env_return_error(i32 code, u8 *result_pointer, i32 result_size, i32 ident)
     __attribute__((__import_module__("env"),
                    __import_name__("return_error")));
+void env_log_msg(u8 *message_pointer, i32 message_length, i32 log_level, i32 ident)
+    __attribute__((__import_module__("env"),
+                   __import_name__("log_msg")));
+i32 env_fetch_url(i32 method, u8 *url_pointer, i32 url_size, u8 *body_pointer, i32 body_size, i32 ident)
+    __attribute__((__import_module__("env"),
+                   __import_name__("fetch_url")));
+i32 env_get_ffi_result(u8 *pointer, i32 ident)
+    __attribute__((__import_module__("env"),
+                   __import_name__("get_ffi_result")));
 
 #endif

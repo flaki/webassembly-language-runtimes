@@ -47,7 +47,7 @@ class WasmMemoryManager {
     // Encode the string in utf-8.
     const encoder = new TextEncoder();
     const bytes = encoder.encode(string);
-    let buffer = this.allocateBuf(bytes.length + 1);
+    let buffer = this.allocateBuf(bytes.length);
     buffer.setBytes(bytes);
     return buffer;
   }
