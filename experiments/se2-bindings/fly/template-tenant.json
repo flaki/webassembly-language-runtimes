@@ -1,0 +1,25 @@
+{
+  "identifier": "com.suborbital.app",
+  "specVersion": 1,
+  "tenantVersion": 1,
+  "defaultNamespace": {
+    "name": "default",
+    "capabilities": {},
+    "modules": null
+  },
+  "namespaces": [],
+  "modules": [
+    {
+      "name": "py",
+      "namespace": "default",
+      "lang": "python",
+      "ref": "<WASMHASH>",
+      "fqmn": "fqmn://com.suborbital.app/default/py@<WASMHASH>",
+      "revisions": [
+        {
+          "ref": "<WASMHASH>"
+        }
+      ]
+    }
+  ]
+}
